@@ -4,8 +4,9 @@ import { GalleryLoggerService } from './gallery-logger.service';
 
 @Component({
   selector: 'app-root',
-  template: `<app-gallery>
-              <app-slide></app-slide>
+  template: `<app-gallery [parentToChild]="'parentToChild'">
+              <!-- <app-slide></app-slide> -->
+              <h1 #header>Projected Header</h1>
             </app-gallery>`,
   providers: [{ provide: GalleryLoggerService, useExisting: SlideService}]
 })
